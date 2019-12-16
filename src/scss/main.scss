@@ -1,0 +1,611 @@
+@import 'reset';
+@import 'var';
+@import 'particles';
+@import 'fonts';
+@import 'responsive-txt';
+
+.header {
+	padding: 20px 0;
+	&__inner {
+		@include classic-flex;
+		align-items: center;
+	}
+}
+
+.logo {
+	position: relative;
+	@media screen and (max-width: 991px) {
+		flex-basis: 15%;
+	}
+	&__link {
+		display: block;
+	}
+	&__img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		&_footer {
+			@media screen and (max-width: 991px){
+				max-width: 75%;				
+			}
+		}
+	}
+	&_pad_b-12 {
+		padding-bottom: 12px;
+	}
+	&_line::after {
+		@include border-absolute;
+		background-color: $color-main;
+		width: 114px;
+	}
+}
+
+.navigation {
+	@media screen and (max-width: 767px) {
+		flex-basis: 50%;;
+	}
+	&__list {
+		@include classic-flex;
+	}
+	&__link {
+		text-decoration: none !important;
+		display: block;
+		text-transform: uppercase;
+		padding: 0 10px;
+		color: $color-secondary;
+		font-family: "Exo 2";
+		@include fluidFontSize(5px, 10px, 320px, 767px, 14px);
+		@include fluidFontSize(12px, 12px, 768px, 991px, 14px);
+		@include fluidFontSize(14px, 14px, 992px, 1920px, 14px);
+		line-height: 11.5px;
+		&:hover {
+			color: $color-success;
+		}
+	}
+}
+
+.phones {
+	position: relative;
+	padding-left: 25px;
+	@media screen and (max-width: 575px) {
+		padding: 15px;
+	}
+	&::before {
+		@include cont-block-abs;
+		background: url('../img/icons/phones.png') no-repeat center / contain;
+		width: 16px;
+		height: 27px;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		@media screen and (max-width: 767px) {
+			width: 14px;
+		}
+		@media screen and (max-width: 575px) {
+			width: 10px;
+		}
+	}
+	&__link {
+		text-decoration: none !important;
+		display: block;
+		@include fluidFontSize(8px, 12px, 320px, 767px, 16px);
+		@include fluidFontSize(14px, 14px, 768px, 991px, 16px);
+		@include fluidFontSize(16px, 16px, 992px, 1920px, 16px);
+		
+		color: $color-secondary;
+		font-family: "Exo 2";
+		&:hover {
+			color: $color-success;
+		}
+		&_footer {
+			@include fluidFontSize(12px, 12px, 469px, 767px, 14px);
+			@include fluidFontSize(12px, 12px, 768px, 991px, 14px);
+			@include fluidFontSize(14px, 14px, 992px, 1920px, 14px);
+			color: $color-main;
+			&:hover {
+				color: $color-warning;
+			}
+		}
+	}
+	&__icon-right {
+		position: relative;
+		padding-right: 25px;
+		@media screen and (max-width: 767px) {
+			padding-left: 25px;
+			padding-right: 0;
+		}
+		@media screen and (max-width: 468px) {
+			padding-left: 0;
+			padding-right: 25px;
+		}
+		&::after {
+			@include cont-block-abs;
+			background: url('../img/icons/phone-footer.png') no-repeat center / contain;
+			width: 18px;
+			height: 30px;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			@media screen and (min-width: 469px) and (max-width: 767px) {
+				left: 0;
+				width: 13px;
+			}
+			@media screen and (max-width: 468px) {
+				right: 0;
+				height: 24px;
+			}
+		}
+	}
+}
+
+//main
+	.banner {
+		padding: 147px 0 67px 0;
+		background: url('../img/2015-Toyota-Camry-Hybrid.png') no-repeat center / cover;
+		@media screen and (max-width: 991px) {
+			&_max-w-991_pad-50-0 {
+				text-align: center;
+				padding: 50px 0;
+			}
+			&_max-w-991_mar-bot-30  {
+				margin-bottom: 30px;
+			}
+		}
+		&__title {
+			display: block;
+			text-transform: uppercase;
+		}
+		&__title-name-top {
+			display: block;
+			color: $color-main;
+			font-family: "Russo One";
+			font-weight: 400;
+			@include fluidFontSize(18px, 36px, 320px, 767px, 72px);
+			@include fluidFontSize(50px, 50px, 768px, 991px, 72px);
+			@include fluidFontSize(72px, 72px, 992px, 1920px, 72px);
+		}
+		&__title-secondary {
+			color: $color-secondary;
+			font-family: "Exo 2";
+			font-weight: 700;
+			@include fluidFontSize(10px, 16px, 320px, 767px, 72px);
+			@include fluidFontSize(20px, 20px, 768px, 991px, 72px);
+			@include fluidFontSize(28px, 28px, 992px, 1920px, 72px);
+			&_f-weight_400 {
+				font-weight: 400;
+			}
+			&_f-weight_300 {
+				font-weight: 300;
+				@include fluidFontSize(10px, 14px, 320px, 767px, 72px);
+				@include fluidFontSize(16px, 16px, 768px, 992px, 72px);
+				@include fluidFontSize(24px, 24px, 992px, 1920px, 72px);	
+			}
+		}
+		&__title-primary {
+			display: block;
+			color: $color-warning;
+			font-family: "Russo One";
+			@include fluidFontSize(28px, 72px, 320px, 767px, 72px);
+			@include fluidFontSize(100px, 100px, 768px, 991px, 72px);
+			@include fluidFontSize(146px, 146px, 992px, 1920px, 72px);
+			font-weight: 400;
+		}
+	}
+	
+	.form {
+		background: $color-danger;
+		padding: 30px 20px 40px;
+		&__title {
+			text-transform: uppercase;
+			color: $color-main;
+			font-family: "Exo 2";
+			@include fluidFontSize(12px, 12px, 320px, 767px, 16px);
+			@include fluidFontSize(14px, 14px, 768px, 1199px, 16px);
+			@include fluidFontSize(16px, 16px, 1200px, 1920px, 16px);
+			font-weight: 500;
+			line-height: 16px;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		&__field {
+			display: block;
+			font-family: "Exo 2 - Light Italic";
+			width: 100%;
+			border-radius: 4px;
+			border: none;
+			padding: 3px 5px;
+			margin-bottom: 20px;
+			font-weight: 500;
+			@include fluidFontSize(8px, 12px, 320px, 767px, 16px);
+			@include fluidFontSize(16px, 16px, 768px, 1920px, 16px);
+		}
+		&__primary-button {
+			margin-top: 40px;
+		}
+	}
+	
+	.trust {
+		background: $color-success;
+		padding: 74px 0 67px 0;
+		@media screen and (max-width: 991px) {
+			&_max-w-991 {
+				flex: none;
+				display: block;
+				max-width: 33.3%;		
+			}
+		}
+		@media screen and (max-width: 767px) {
+			&_max-w-767 {
+				max-width: 100%;
+				&:not(:last-child) {
+					margin-bottom: 50px;
+				}
+			}
+		}
+		&__image {
+			height: 120px;
+			text-align: center;
+			&_arrow {
+				&::after {
+					@include white-arrow;
+				}
+			}
+			&_icon {
+				max-width: 100%;
+			}
+		}
+	}
+	
+	.auto-price {
+		background: url('../img/background_orange.png') no-repeat center / cover;
+		padding: 42px 0 42px 0;
+		&__title {
+			text-align: center;
+			color: $color-main;
+			font-family: "Exo 2";
+			@include fluidFontSize(16px, 28px, 320px, 1920px, 28px);
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+	
+	.row {
+		&_pad_t-53 {
+			padding: 53px 0 0 0;
+		}
+		&_pad_t-55_b-40 {
+			padding: 55px 0 40px 0;
+			@media screen and (max-width: 991px) {
+				padding: 30px 0 20px 0;
+			}
+		}
+		&_pad_t-57 {
+			padding-top: 57px;
+		}
+		@media screen and (max-width: 991px) {
+			&_max-w-991 {
+				justify-content: flex-start !important;
+			}
+		}
+	}
+
+	.comments {
+		padding: 50px 0 60px;
+		&__border {
+			border: 4px solid $color-success;
+			padding: 18px;
+		}
+		&__title {
+			color: $color-secondary;
+			font-family: "Exo 2";
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 12px;
+			padding: 24px 0 10px 0;
+		}
+		&__txt {
+			font-family: "Exo 2";
+			max-width: 309px;
+			font-size: 12px;
+			margin: 0 auto;
+		}
+		&__quotes-with-user {
+			position: relative;
+		}
+		&__img {
+			display: inline-block;
+			top: 0;
+			margin: 0 auto;
+		}
+		&__img-user {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		@media screen and (max-width: 991px) {
+			&__max-w-991 {
+				flex: none;
+				display: block;
+				max-width: 50%;
+				padding-bottom: 25px;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			&__max-w-991 {
+				max-width: 100%;
+				&:not(:last-child) {
+					padding-bottom: 25px;
+				}
+			}
+		}
+	}
+	
+	.quotes-left {
+		position: absolute;
+		top: 15%;
+		left: 0;
+	}
+	.quotes-right {
+		position: absolute;
+		top: 15%;
+		right: 0;
+	}
+	.quote {
+		position: relative;
+		margin-right: 5px;
+		display: inline-block;
+		&_reverse {
+			transform: rotate(-180deg);	
+		}
+		&::before, &::after {
+			content: '';
+			display: block;
+		}
+		&::before {
+			background-color: #FEE8E2;
+			margin-top: 15px;
+			width: 26px;
+			height: 22px;
+			top: 20%;
+			left: 10%;
+		}	
+		&::after {
+			width: 18px;
+			border-bottom: 16px solid #FEE8E2;
+			border-left: 10px solid transparent;
+			border-right: 0px solid transparent;
+			transform: skew(170deg);
+			top: 0;
+			left: 1px;
+			position: absolute;
+		}	
+	}
+
+	.purchased-cars {
+		@media screen and (max-width: 767px) {
+			&_max-w-767 {
+				flex-basis: 50%;
+				&:not(:last-child){
+					margin-bottom: 20px;
+				}
+			}
+		}
+		padding: 57px 0;
+		&__image {
+			font-size:0;
+			overflow: hidden;
+			.car {
+				display: block;
+				max-width: 100%;
+				height: auto;
+				transition: 0.8s;
+			}
+			&:hover .car {
+				transform: scale(1.1);
+			}
+		}
+		&__area {
+			max-width: 261px;
+			background-color: $color-success;
+			text-align: center;
+			color: $color-main;
+			font-family: "Exo 2";
+			font-weight: 700;
+			line-height: 44px;
+			transition-duration: 0.8s;
+			@include fluidFontSize (9px, 14px, 320px, 767px, 16px);
+			@include fluidFontSize (10px, 10px, 768px, 991px, 16px);
+			@include fluidFontSize (14px, 16px, 992px, 1920px, 16px);
+		}
+		&__link-img {
+			display: block;
+			text-decoration: none !important;
+		}
+		&__link-txt {
+			text-decoration: none !important;
+			&:hover .purchased-cars__area {
+				color: $color-warning;	
+			}
+		}
+	}
+	
+	.questions {
+		padding: 60px 0;
+		&__title {
+			text-align: center;
+			position: relative;
+			@include fluidFontSize (16px, 20px, 320px, 767px, 28px);
+			@include fluidFontSize (28px, 28px, 768px, 1920px, 28px);
+			&::before {
+				@include cont-block-abs;
+				background: url('../img/icons/hand-with-phone.svg') no-repeat center / contain;
+				left: 0;
+				bottom: -85px;
+				width: 242px;
+				height: 325px;
+				@media screen and (max-width: 767px) {
+					bottom: -150px;
+					width: 128px;
+				}
+				@media screen and (max-width: 400px) {
+					display: none;
+				}
+			}
+		}
+		&__title-name-top {
+			display: block;
+			text-transform: uppercase;
+			color: $color-secondary;
+			font-family: "Exo 2";
+			font-weight: 700;
+			position: relative;
+			padding-bottom: 14px;
+			&::after {
+				@include border-absolute;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+		&__title-secondary {
+			display: block;
+			margin: 40px 0 34px 0;
+			color: $color-secondary;
+			font-family: "Exo 2";
+			font-weight: 700;
+			&_color {
+				color: $color-danger;
+				text-transform: uppercase;
+				@media screen and (max-width: 991px){
+					display: block;
+					margin-top: 15px;
+				}
+			}
+		}
+		&__phones {
+			display: block;
+			margin: 0 auto;
+			max-width: 275px;
+			text-decoration: none !important;
+			color: $color-success;
+			font-family: "Exo 2";
+			font-weight: 400;
+			line-height: 36px;
+			&:hover {
+				color: $color-danger;
+			}
+		}
+		&__links {
+			display: block;
+			max-width: 275px;
+		}
+	}	
+//конец main
+
+.footer {
+	background-color: $color-success;
+	@media screen and (max-width: 767px) {
+		&_max-w-767_f-basis {
+			flex-basis: 33.3%;
+		}
+		&_max-w-767_classic-flex_mt-25 {
+			margin-top: 25px;
+			@include classic-flex;
+			align-items: flex-end !important;
+		}
+	}
+	@media screen and (max-width: 468px) {
+		&_max-w-468_d-none {
+			display: none;
+		}
+		&_max-w-468_d-block {
+			flex: none;
+			display: block;
+			max-width: 50%;
+		}
+		&_max-w-468_full-width {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		color: $color-main;
+		font-family: "Exo 2";
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 16px;
+		text-transform: uppercase;
+		position: relative;
+		padding-bottom: 15px;
+		&::after {
+			@include border-absolute;
+			background-color: $color-main;
+			width: 114px;
+		}
+	}
+	&__txt {
+		margin-top: 12px;
+		color: $color-main;
+		font-family: "Exo 2";
+		@include fluidFontSize(8px, 12px, 320px, 1920px, 12px);
+		font-weight: 400;
+		line-height: 16px;
+		max-width: 210px;
+	}
+	&__nav {
+		text-decoration: none;
+		margin-top: 15px;
+	}
+	&__link {
+		display: block;
+		line-height: 22px;
+		font-family: "Exo 2";
+		font-weight: 400;
+		@include fluidFontSize(10px, 10px, 320px, 767px, 14px);
+		@include fluidFontSize(11px, 11px, 768px, 991px, 14px);
+		@include fluidFontSize(14px, 14px, 992px, 1920px, 14px);
+		color: $color-main;
+		&:hover {
+			text-decoration: none;
+			color: $color-warning;
+		}
+	}
+	&_pad_t-42_b-42 {
+		padding: 42px 0 42px 0;
+	}
+}
+
+.adress {
+	margin-top: 33px;
+	padding-right: 25px;
+	position: relative;
+	@media screen and (max-width: 767px) {
+		&_max-w-767 {
+			flex-basis: 40%;
+		}
+	}
+	&::after {
+		@include cont-block-abs;
+		background: url('../img/icons/for-map.png') no-repeat center / contain;
+		width: 19px;
+		height: 26px;
+		top: 0;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.copyright {
+	background-color: $color-danger;
+	&__txt {
+		color: $color-main;
+		font-family: "Exo 2";
+		@include fluidFontSize(10px, 16px, 320px, 1920px, 16px);
+		font-weight: 400;
+		line-height: 40px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}

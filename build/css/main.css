@@ -1,0 +1,999 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.primary-button {
+  display: block;
+  width: 100%;
+  max-width: 145px;
+  border-radius: 4px;
+  background-color: #ffee00;
+  font-size: 8px;
+  color: #222222;
+  line-height: 29px;
+  border: none;
+  margin: 0 auto;
+  transition-duration: 0.8s;
+  text-transform: uppercase;
+  font-family: "Exo 2"; }
+  @media (min-width: 320px) {
+    .primary-button {
+      font-size: 16px;
+      font-size: calc( 0.0179 * 100vw + 2.27293px); } }
+  @media (min-width: 767px) {
+    .primary-button {
+      font-size: 16px; } }
+  .primary-button__bigger {
+    line-height: 37px;
+    max-width: 225px;
+    font-weight: 400;
+    border-radius: 8px;
+    font-size: 16px; }
+    @media screen and (max-width: 767px) {
+      .primary-button__bigger {
+        font-size: 12px;
+        line-height: 26px;
+        max-width: 180px; } }
+  .primary-button_mar_t-30 {
+    margin-top: 30px; }
+  .primary-button_mar_t-40 {
+    margin-top: 40px; }
+  .primary-button_background_color {
+    background-color: #dd6d4b;
+    color: #fff; }
+  .primary-button:hover {
+    transform: scale(1.2); }
+
+.section-title {
+  position: relative;
+  z-index: 12;
+  text-align: center; }
+  .section-title__txt {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    position: relative;
+    padding: 20px 0 20px 20px;
+    font-family: "Russo One";
+    font-size: 15px;
+    font-size: 24px; }
+    @media (min-width: 320px) {
+      .section-title__txt {
+        font-size: 32px;
+        font-size: calc( 0.02013 * 100vw + 8.55705px); } }
+    @media (min-width: 767px) {
+      .section-title__txt {
+        font-size: 24px; } }
+    @media (min-width: 768px) {
+      .section-title__txt {
+        font-size: 32px;
+        font-size: calc( 0.00694 * 100vw + 18.66667px); } }
+    @media (min-width: 1920px) {
+      .section-title__txt {
+        font-size: 32px; } }
+    .section-title__txt::before, .section-title__txt::after {
+      content: '';
+      display: block;
+      position: absolute; }
+    .section-title__txt::before {
+      width: 87px;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      background: #dd6d4b; }
+    .section-title__txt::after {
+      width: 70px;
+      height: 4px;
+      background: #fff;
+      bottom: 10px;
+      left: 40px; }
+  .section-title_ta-left {
+    text-align: left; }
+  .section-title__txt_color_black {
+    color: #222222; }
+    .section-title__txt_color_black::after {
+      background: #222222; }
+  .section-title_pad_b-40 {
+    padding-bottom: 40px; }
+
+.mini-title {
+  color: #ffee00;
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 13px;
+  text-align: center;
+  margin-top: 15px; }
+
+.mini-txt {
+  color: #fff;
+  font-family: "Exo 2";
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  text-align: center; }
+
+@font-face {
+  font-family: 'Russo One';
+  src: url("../fonts/RussoOne.eot");
+  src: url("../fonts/RussoOne.eot?#iefix") format("embedded-opentype"), url("../fonts/RussoOne.woff2") format("woff2"), url("../fonts/RussoOne.woff") format("woff"), url("../fonts/RussoOne.ttf") format("truetype"), url("../fonts/RussoOne.svg#RussoOne") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url("../fonts/Exo2-Regular.eot");
+  src: url("../fonts/Exo2-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Exo2-Regular.woff2") format("woff2"), url("../fonts/Exo2-Regular.woff") format("woff"), url("../fonts/Exo2-Regular.ttf") format("truetype"), url("../fonts/Exo2-Regular.svg#Exo2-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Exo 2 - Light Italic';
+  src: url("../fonts/Exo2-LightItalic.eot");
+  src: url("../fonts/Exo2-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Exo2-LightItalic.woff2") format("woff2"), url("../fonts/Exo2-LightItalic.woff") format("woff"), url("../fonts/Exo2-LightItalic.ttf") format("truetype"), url("../fonts/Exo2-LightItalic.svg#Exo2-LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic; }
+
+.header {
+  padding: 20px 0; }
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center; }
+
+.logo {
+  position: relative; }
+  @media screen and (max-width: 991px) {
+    .logo {
+      flex-basis: 15%; } }
+  .logo__link {
+    display: block; }
+  .logo__img {
+    display: block;
+    max-width: 100%;
+    height: auto; }
+    @media screen and (max-width: 991px) {
+      .logo__img_footer {
+        max-width: 75%; } }
+  .logo_pad_b-12 {
+    padding-bottom: 12px; }
+  .logo_line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 218px;
+    height: 2px;
+    background-color: #222222;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 114px; }
+    @media screen and (max-width: 767px) {
+      .logo_line::after {
+        width: 114px; } }
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    flex-basis: 50%; } }
+
+.navigation__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.navigation__link {
+  text-decoration: none !important;
+  display: block;
+  text-transform: uppercase;
+  padding: 0 10px;
+  color: #222222;
+  font-family: "Exo 2";
+  font-size: 5px;
+  font-size: 12px;
+  font-size: 14px;
+  line-height: 11.5px; }
+  @media (min-width: 320px) {
+    .navigation__link {
+      font-size: 14px;
+      font-size: calc( 0.01119 * 100vw + 1.42058px); } }
+  @media (min-width: 767px) {
+    .navigation__link {
+      font-size: 10px; } }
+  @media (min-width: 768px) {
+    .navigation__link {
+      font-size: 14px;
+      font-size: calc( 0 * 100vw + 12px); } }
+  @media (min-width: 991px) {
+    .navigation__link {
+      font-size: 12px; } }
+  @media (min-width: 992px) {
+    .navigation__link {
+      font-size: 14px;
+      font-size: calc( 0 * 100vw + 14px); } }
+  @media (min-width: 1920px) {
+    .navigation__link {
+      font-size: 14px; } }
+  .navigation__link:hover {
+    color: #06bc7e; }
+
+.phones {
+  position: relative;
+  padding-left: 25px; }
+  @media screen and (max-width: 575px) {
+    .phones {
+      padding: 15px; } }
+  .phones::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url("../img/icons/phones.png") no-repeat center/contain;
+    width: 16px;
+    height: 27px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); }
+    @media screen and (max-width: 767px) {
+      .phones::before {
+        width: 14px; } }
+    @media screen and (max-width: 575px) {
+      .phones::before {
+        width: 10px; } }
+  .phones__link {
+    text-decoration: none !important;
+    display: block;
+    font-size: 8px;
+    font-size: 14px;
+    font-size: 16px;
+    color: #222222;
+    font-family: "Exo 2"; }
+    @media (min-width: 320px) {
+      .phones__link {
+        font-size: 16px;
+        font-size: calc( 0.00895 * 100vw + 5.13647px); } }
+    @media (min-width: 767px) {
+      .phones__link {
+        font-size: 12px; } }
+    @media (min-width: 768px) {
+      .phones__link {
+        font-size: 16px;
+        font-size: calc( 0 * 100vw + 14px); } }
+    @media (min-width: 991px) {
+      .phones__link {
+        font-size: 14px; } }
+    @media (min-width: 992px) {
+      .phones__link {
+        font-size: 16px;
+        font-size: calc( 0 * 100vw + 16px); } }
+    @media (min-width: 1920px) {
+      .phones__link {
+        font-size: 16px; } }
+    .phones__link:hover {
+      color: #06bc7e; }
+    .phones__link_footer {
+      font-size: 12px;
+      font-size: 12px;
+      font-size: 14px;
+      color: #fff; }
+      @media (min-width: 469px) {
+        .phones__link_footer {
+          font-size: 14px;
+          font-size: calc( 0 * 100vw + 12px); } }
+      @media (min-width: 767px) {
+        .phones__link_footer {
+          font-size: 12px; } }
+      @media (min-width: 768px) {
+        .phones__link_footer {
+          font-size: 14px;
+          font-size: calc( 0 * 100vw + 12px); } }
+      @media (min-width: 991px) {
+        .phones__link_footer {
+          font-size: 12px; } }
+      @media (min-width: 992px) {
+        .phones__link_footer {
+          font-size: 14px;
+          font-size: calc( 0 * 100vw + 14px); } }
+      @media (min-width: 1920px) {
+        .phones__link_footer {
+          font-size: 14px; } }
+      .phones__link_footer:hover {
+        color: #ffee00; }
+  .phones__icon-right {
+    position: relative;
+    padding-right: 25px; }
+    @media screen and (max-width: 767px) {
+      .phones__icon-right {
+        padding-left: 25px;
+        padding-right: 0; } }
+    @media screen and (max-width: 468px) {
+      .phones__icon-right {
+        padding-left: 0;
+        padding-right: 25px; } }
+    .phones__icon-right::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: url("../img/icons/phone-footer.png") no-repeat center/contain;
+      width: 18px;
+      height: 30px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%); }
+      @media screen and (min-width: 469px) and (max-width: 767px) {
+        .phones__icon-right::after {
+          left: 0;
+          width: 13px; } }
+      @media screen and (max-width: 468px) {
+        .phones__icon-right::after {
+          right: 0;
+          height: 24px; } }
+
+.banner {
+  padding: 147px 0 67px 0;
+  background: url("../img/2015-Toyota-Camry-Hybrid.png") no-repeat center/cover; }
+  @media screen and (max-width: 991px) {
+    .banner_max-w-991_pad-50-0 {
+      text-align: center;
+      padding: 50px 0; }
+    .banner_max-w-991_mar-bot-30 {
+      margin-bottom: 30px; } }
+  .banner__title {
+    display: block;
+    text-transform: uppercase; }
+  .banner__title-name-top {
+    display: block;
+    color: #fff;
+    font-family: "Russo One";
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 50px;
+    font-size: 72px; }
+    @media (min-width: 320px) {
+      .banner__title-name-top {
+        font-size: 72px;
+        font-size: calc( 0.04027 * 100vw + 5.11409px); } }
+    @media (min-width: 767px) {
+      .banner__title-name-top {
+        font-size: 36px; } }
+    @media (min-width: 768px) {
+      .banner__title-name-top {
+        font-size: 72px;
+        font-size: calc( 0 * 100vw + 50px); } }
+    @media (min-width: 991px) {
+      .banner__title-name-top {
+        font-size: 50px; } }
+    @media (min-width: 992px) {
+      .banner__title-name-top {
+        font-size: 72px;
+        font-size: calc( 0 * 100vw + 72px); } }
+    @media (min-width: 1920px) {
+      .banner__title-name-top {
+        font-size: 72px; } }
+  .banner__title-secondary {
+    color: #222222;
+    font-family: "Exo 2";
+    font-weight: 700;
+    font-size: 10px;
+    font-size: 20px;
+    font-size: 28px; }
+    @media (min-width: 320px) {
+      .banner__title-secondary {
+        font-size: 72px;
+        font-size: calc( 0.01342 * 100vw + 5.7047px); } }
+    @media (min-width: 767px) {
+      .banner__title-secondary {
+        font-size: 16px; } }
+    @media (min-width: 768px) {
+      .banner__title-secondary {
+        font-size: 72px;
+        font-size: calc( 0 * 100vw + 20px); } }
+    @media (min-width: 991px) {
+      .banner__title-secondary {
+        font-size: 20px; } }
+    @media (min-width: 992px) {
+      .banner__title-secondary {
+        font-size: 72px;
+        font-size: calc( 0 * 100vw + 28px); } }
+    @media (min-width: 1920px) {
+      .banner__title-secondary {
+        font-size: 28px; } }
+    .banner__title-secondary_f-weight_400 {
+      font-weight: 400; }
+    .banner__title-secondary_f-weight_300 {
+      font-weight: 300;
+      font-size: 10px;
+      font-size: 16px;
+      font-size: 24px; }
+      @media (min-width: 320px) {
+        .banner__title-secondary_f-weight_300 {
+          font-size: 72px;
+          font-size: calc( 0.00895 * 100vw + 7.13647px); } }
+      @media (min-width: 767px) {
+        .banner__title-secondary_f-weight_300 {
+          font-size: 14px; } }
+      @media (min-width: 768px) {
+        .banner__title-secondary_f-weight_300 {
+          font-size: 72px;
+          font-size: calc( 0 * 100vw + 16px); } }
+      @media (min-width: 992px) {
+        .banner__title-secondary_f-weight_300 {
+          font-size: 16px; } }
+      @media (min-width: 992px) {
+        .banner__title-secondary_f-weight_300 {
+          font-size: 72px;
+          font-size: calc( 0 * 100vw + 24px); } }
+      @media (min-width: 1920px) {
+        .banner__title-secondary_f-weight_300 {
+          font-size: 24px; } }
+  .banner__title-primary {
+    display: block;
+    color: #ffee00;
+    font-family: "Russo One";
+    font-size: 28px;
+    font-size: 100px;
+    font-size: 146px;
+    font-weight: 400; }
+    @media (min-width: 320px) {
+      .banner__title-primary {
+        font-size: 72px;
+        font-size: calc( 0.09843 * 100vw + -3.49888px); } }
+    @media (min-width: 767px) {
+      .banner__title-primary {
+        font-size: 72px; } }
+    @media (min-width: 768px) {
+      .banner__title-primary {
+        font-size: 72px;
+        font-size: calc( 0 * 100vw + 100px); } }
+    @media (min-width: 991px) {
+      .banner__title-primary {
+        font-size: 100px; } }
+    @media (min-width: 992px) {
+      .banner__title-primary {
+        font-size: 72px;
+        font-size: calc( 0 * 100vw + 146px); } }
+    @media (min-width: 1920px) {
+      .banner__title-primary {
+        font-size: 146px; } }
+
+.form {
+  background: #dd6d4b;
+  padding: 30px 20px 40px; }
+  .form__title {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Exo 2";
+    font-size: 8px;
+    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: 20px; }
+    @media (min-width: 320px) {
+      .form__title {
+        font-size: 16px;
+        font-size: calc( 0.00895 * 100vw + 5.13647px); } }
+    @media (min-width: 767px) {
+      .form__title {
+        font-size: 12px; } }
+    @media (min-width: 768px) {
+      .form__title {
+        font-size: 16px;
+        font-size: calc( 0 * 100vw + 14px); } }
+    @media (min-width: 1199px) {
+      .form__title {
+        font-size: 14px; } }
+    @media (min-width: 1200px) {
+      .form__title {
+        font-size: 16px;
+        font-size: calc( 0 * 100vw + 16px); } }
+    @media (min-width: 1920px) {
+      .form__title {
+        font-size: 16px; } }
+  .form__field {
+    display: block;
+    font-family: "Exo 2 - Light Italic";
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    padding: 3px 5px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 8px;
+    font-size: 16px; }
+    @media (min-width: 320px) {
+      .form__field {
+        font-size: 16px;
+        font-size: calc( 0.00895 * 100vw + 5.13647px); } }
+    @media (min-width: 767px) {
+      .form__field {
+        font-size: 12px; } }
+    @media (min-width: 768px) {
+      .form__field {
+        font-size: 16px;
+        font-size: calc( 0 * 100vw + 16px); } }
+    @media (min-width: 1920px) {
+      .form__field {
+        font-size: 16px; } }
+  .form__primary-button {
+    margin-top: 40px; }
+
+.trust {
+  background: #06bc7e;
+  padding: 74px 0 67px 0; }
+  @media screen and (max-width: 991px) {
+    .trust_max-w-991 {
+      flex: none;
+      display: block;
+      max-width: 33.3%; } }
+  @media screen and (max-width: 767px) {
+    .trust_max-w-767 {
+      max-width: 100%; }
+      .trust_max-w-767:not(:last-child) {
+        margin-bottom: 50px; } }
+  .trust__image {
+    height: 120px;
+    text-align: center; }
+    .trust__image_arrow::after {
+      content: "";
+      background: url("../img/arrow.png") no-repeat center/contain;
+      width: 32px;
+      height: 23px;
+      left: 100%;
+      top: 25%;
+      position: absolute;
+      display: block; }
+      @media screen and (max-width: 991px) {
+        .trust__image_arrow::after {
+          left: 90%; } }
+      @media screen and (max-width: 767px) {
+        .trust__image_arrow::after {
+          left: 48%;
+          top: 108%;
+          transform: rotate(90deg); } }
+    .trust__image_icon {
+      max-width: 100%; }
+
+.auto-price {
+  background: url("../img/background_orange.png") no-repeat center/cover;
+  padding: 42px 0 42px 0; }
+  .auto-price__title {
+    text-align: center;
+    color: #fff;
+    font-family: "Exo 2";
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase; }
+    @media (min-width: 320px) {
+      .auto-price__title {
+        font-size: 28px;
+        font-size: calc( 0.0075 * 100vw + 13.6px); } }
+    @media (min-width: 1920px) {
+      .auto-price__title {
+        font-size: 28px; } }
+
+.row_pad_t-53 {
+  padding: 53px 0 0 0; }
+
+.row_pad_t-55_b-40 {
+  padding: 55px 0 40px 0; }
+  @media screen and (max-width: 991px) {
+    .row_pad_t-55_b-40 {
+      padding: 30px 0 20px 0; } }
+
+.row_pad_t-57 {
+  padding-top: 57px; }
+
+@media screen and (max-width: 991px) {
+  .row_max-w-991 {
+    justify-content: flex-start !important; } }
+
+.comments {
+  padding: 50px 0 60px; }
+  .comments__border {
+    border: 4px solid #06bc7e;
+    padding: 18px; }
+  .comments__title {
+    color: #222222;
+    font-family: "Exo 2";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 12px;
+    padding: 24px 0 10px 0; }
+  .comments__txt {
+    font-family: "Exo 2";
+    max-width: 309px;
+    font-size: 12px;
+    margin: 0 auto; }
+  .comments__quotes-with-user {
+    position: relative; }
+  .comments__img {
+    display: inline-block;
+    top: 0;
+    margin: 0 auto; }
+  .comments__img-user {
+    display: block;
+    width: 100%;
+    height: auto; }
+  @media screen and (max-width: 991px) {
+    .comments__max-w-991 {
+      flex: none;
+      display: block;
+      max-width: 50%;
+      padding-bottom: 25px; } }
+  @media screen and (max-width: 767px) {
+    .comments__max-w-991 {
+      max-width: 100%; }
+      .comments__max-w-991:not(:last-child) {
+        padding-bottom: 25px; } }
+
+.quotes-left {
+  position: absolute;
+  top: 15%;
+  left: 0; }
+
+.quotes-right {
+  position: absolute;
+  top: 15%;
+  right: 0; }
+
+.quote {
+  position: relative;
+  margin-right: 5px;
+  display: inline-block; }
+  .quote_reverse {
+    transform: rotate(-180deg); }
+  .quote::before, .quote::after {
+    content: '';
+    display: block; }
+  .quote::before {
+    background-color: #FEE8E2;
+    margin-top: 15px;
+    width: 26px;
+    height: 22px;
+    top: 20%;
+    left: 10%; }
+  .quote::after {
+    width: 18px;
+    border-bottom: 16px solid #FEE8E2;
+    border-left: 10px solid transparent;
+    border-right: 0px solid transparent;
+    transform: skew(170deg);
+    top: 0;
+    left: 1px;
+    position: absolute; }
+
+.purchased-cars {
+  padding: 57px 0; }
+  @media screen and (max-width: 767px) {
+    .purchased-cars_max-w-767 {
+      flex-basis: 50%; }
+      .purchased-cars_max-w-767:not(:last-child) {
+        margin-bottom: 20px; } }
+  .purchased-cars__image {
+    font-size: 0;
+    overflow: hidden; }
+    .purchased-cars__image .car {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      transition: 0.8s; }
+    .purchased-cars__image:hover .car {
+      transform: scale(1.1); }
+  .purchased-cars__area {
+    max-width: 261px;
+    background-color: #06bc7e;
+    text-align: center;
+    color: #fff;
+    font-family: "Exo 2";
+    font-weight: 700;
+    line-height: 44px;
+    transition-duration: 0.8s;
+    font-size: 9px;
+    font-size: 10px;
+    font-size: 14px; }
+    @media (min-width: 320px) {
+      .purchased-cars__area {
+        font-size: 16px;
+        font-size: calc( 0.01119 * 100vw + 5.42058px); } }
+    @media (min-width: 767px) {
+      .purchased-cars__area {
+        font-size: 14px; } }
+    @media (min-width: 768px) {
+      .purchased-cars__area {
+        font-size: 16px;
+        font-size: calc( 0 * 100vw + 10px); } }
+    @media (min-width: 991px) {
+      .purchased-cars__area {
+        font-size: 10px; } }
+    @media (min-width: 992px) {
+      .purchased-cars__area {
+        font-size: 16px;
+        font-size: calc( 0.00216 * 100vw + 11.86207px); } }
+    @media (min-width: 1920px) {
+      .purchased-cars__area {
+        font-size: 16px; } }
+  .purchased-cars__link-img {
+    display: block;
+    text-decoration: none !important; }
+  .purchased-cars__link-txt {
+    text-decoration: none !important; }
+    .purchased-cars__link-txt:hover .purchased-cars__area {
+      color: #ffee00; }
+
+.questions {
+  padding: 60px 0; }
+  .questions__title {
+    text-align: center;
+    position: relative;
+    font-size: 16px;
+    font-size: 28px; }
+    @media (min-width: 320px) {
+      .questions__title {
+        font-size: 28px;
+        font-size: calc( 0.00895 * 100vw + 13.13647px); } }
+    @media (min-width: 767px) {
+      .questions__title {
+        font-size: 20px; } }
+    @media (min-width: 768px) {
+      .questions__title {
+        font-size: 28px;
+        font-size: calc( 0 * 100vw + 28px); } }
+    @media (min-width: 1920px) {
+      .questions__title {
+        font-size: 28px; } }
+    .questions__title::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background: url("../img/icons/hand-with-phone.svg") no-repeat center/contain;
+      left: 0;
+      bottom: -85px;
+      width: 242px;
+      height: 325px; }
+      @media screen and (max-width: 767px) {
+        .questions__title::before {
+          bottom: -150px;
+          width: 128px; } }
+      @media screen and (max-width: 400px) {
+        .questions__title::before {
+          display: none; } }
+  .questions__title-name-top {
+    display: block;
+    text-transform: uppercase;
+    color: #222222;
+    font-family: "Exo 2";
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 14px; }
+    .questions__title-name-top::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 218px;
+      height: 2px;
+      background-color: #222222;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: 0 auto; }
+      @media screen and (max-width: 767px) {
+        .questions__title-name-top::after {
+          width: 114px; } }
+  .questions__title-secondary {
+    display: block;
+    margin: 40px 0 34px 0;
+    color: #222222;
+    font-family: "Exo 2";
+    font-weight: 700; }
+    .questions__title-secondary_color {
+      color: #dd6d4b;
+      text-transform: uppercase; }
+      @media screen and (max-width: 991px) {
+        .questions__title-secondary_color {
+          display: block;
+          margin-top: 15px; } }
+  .questions__phones {
+    display: block;
+    margin: 0 auto;
+    max-width: 275px;
+    text-decoration: none !important;
+    color: #06bc7e;
+    font-family: "Exo 2";
+    font-weight: 400;
+    line-height: 36px; }
+    .questions__phones:hover {
+      color: #dd6d4b; }
+  .questions__links {
+    display: block;
+    max-width: 275px; }
+
+.footer {
+  background-color: #06bc7e; }
+  @media screen and (max-width: 767px) {
+    .footer_max-w-767_f-basis {
+      flex-basis: 33.3%; }
+    .footer_max-w-767_classic-flex_mt-25 {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      align-items: flex-end !important; } }
+  @media screen and (max-width: 468px) {
+    .footer_max-w-468_d-none {
+      display: none; }
+    .footer_max-w-468_d-block {
+      flex: none;
+      display: block;
+      max-width: 50%; }
+    .footer_max-w-468_full-width {
+      max-width: 100%; } }
+  .footer__title {
+    color: #fff;
+    font-family: "Exo 2";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px; }
+    .footer__title::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 218px;
+      height: 2px;
+      background-color: #222222;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      width: 114px; }
+      @media screen and (max-width: 767px) {
+        .footer__title::after {
+          width: 114px; } }
+  .footer__txt {
+    margin-top: 12px;
+    color: #fff;
+    font-family: "Exo 2";
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 16px;
+    max-width: 210px; }
+    @media (min-width: 320px) {
+      .footer__txt {
+        font-size: 12px;
+        font-size: calc( 0.0025 * 100vw + 7.2px); } }
+    @media (min-width: 1920px) {
+      .footer__txt {
+        font-size: 12px; } }
+  .footer__nav {
+    text-decoration: none;
+    margin-top: 15px; }
+  .footer__link {
+    display: block;
+    line-height: 22px;
+    font-family: "Exo 2";
+    font-weight: 400;
+    font-size: 10px;
+    font-size: 11px;
+    font-size: 14px;
+    color: #fff; }
+    @media (min-width: 320px) {
+      .footer__link {
+        font-size: 14px;
+        font-size: calc( 0 * 100vw + 10px); } }
+    @media (min-width: 767px) {
+      .footer__link {
+        font-size: 10px; } }
+    @media (min-width: 768px) {
+      .footer__link {
+        font-size: 14px;
+        font-size: calc( 0 * 100vw + 11px); } }
+    @media (min-width: 991px) {
+      .footer__link {
+        font-size: 11px; } }
+    @media (min-width: 992px) {
+      .footer__link {
+        font-size: 14px;
+        font-size: calc( 0 * 100vw + 14px); } }
+    @media (min-width: 1920px) {
+      .footer__link {
+        font-size: 14px; } }
+    .footer__link:hover {
+      text-decoration: none;
+      color: #ffee00; }
+  .footer_pad_t-42_b-42 {
+    padding: 42px 0 42px 0; }
+
+.adress {
+  margin-top: 33px;
+  padding-right: 25px;
+  position: relative; }
+  @media screen and (max-width: 767px) {
+    .adress_max-w-767 {
+      flex-basis: 40%; } }
+  .adress::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url("../img/icons/for-map.png") no-repeat center/contain;
+    width: 19px;
+    height: 26px;
+    top: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.copyright {
+  background-color: #dd6d4b; }
+  .copyright__txt {
+    color: #fff;
+    font-family: "Exo 2";
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center; }
+    @media (min-width: 320px) {
+      .copyright__txt {
+        font-size: 16px;
+        font-size: calc( 0.00375 * 100vw + 8.8px); } }
+    @media (min-width: 1920px) {
+      .copyright__txt {
+        font-size: 16px; } }
+
+/*# sourceMappingURL=main.css.map */

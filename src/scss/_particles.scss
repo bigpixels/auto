@@ -1,0 +1,110 @@
+@import 'responsive-txt';
+
+.primary-button {
+	display: block;
+	width: 100%;
+	max-width: 145px;
+	border-radius: 4px;
+  	background-color: $color-warning;
+	@include fluidFontSize(8px, 16px, 320px, 767px, 16px);  
+	color: $color-secondary;
+	line-height: 29px;
+	border: none; 
+	margin: 0 auto;
+	transition-duration: 0.8s;
+	text-transform: uppercase;
+	font-family: "Exo 2";
+	&__bigger {
+		line-height: 37px;
+		max-width: 225px;
+		font-weight: 400;
+		border-radius: 8px;
+		font-size: 16px;
+		@media screen and (max-width: 767px) {
+			font-size: 12px;
+			line-height: 26px;
+			max-width: 180px;
+		}
+	}
+	&_mar_t-30 {
+		margin-top: 30px;
+	}
+	&_mar_t-40 {
+		margin-top: 40px;
+	}
+	&_background_color {
+		background-color: $color-danger;
+		color: $color-main;
+	}
+	&:hover {
+		transform: scale(1.2);
+	}
+}
+
+.section-title {
+	position: relative;
+	z-index: 12;
+	text-align: center;
+	&__txt {
+		display: inline-block;
+		text-transform: uppercase;
+		color: $color-main;
+		margin: 0;
+		position: relative;
+		padding: 20px 0 20px 20px;
+		font-family: "Russo One";
+		@include fluidFontSize (15px, 24px, 320px, 767px, 32px);
+		@include fluidFontSize (24px, 32px, 768px, 1920px, 32px);
+		&::before, &::after {
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&::before {
+			width: 87px;
+			height: 100%;
+			left: 0;
+			top: 0;
+			z-index: -1;
+			background: $color-danger;
+		}
+		&::after {
+			width: 70px;
+			height: 4px;
+			background: $color-main;
+			bottom: 10px;
+    		left: 40px;
+		}
+	}
+	&_ta-left {
+		text-align: left;
+	}
+	&__txt_color_black {
+		color: $color-secondary;
+		&::after {
+			background: $color-secondary;
+		}
+	}
+	&_pad_b-40 {
+		padding-bottom: 40px;
+	}
+}
+
+.mini-title {
+	color: $color-warning;
+	font-family: "Exo 2";
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-bottom: 13px;
+	text-align: center;
+	margin-top: 15px;
+}
+.mini-txt {
+	color: $color-main;
+	font-family: "Exo 2";
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 14px;
+	text-align: center;
+}

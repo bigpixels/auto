@@ -1,0 +1,60 @@
+$color-main: #fff;
+$color-secondary: #222222;
+$color-danger: #dd6d4b;
+$color-success: #06bc7e;
+$color-warning: #ffee00;
+
+
+@mixin classic-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@mixin white-arrow {
+    content: ""; 
+    background: url('../img/arrow.png') no-repeat center / contain;
+    width: 32px; 
+    height: 23px; 
+    left: 100%; 
+    top: 25%; 
+    position: absolute;
+    display: block;
+    @media screen and (max-width: 991px) {
+        left: 90%;
+    }
+    @media screen and (max-width: 767px) {
+        left: 48%;
+        top: 108%;
+        transform: rotate(90deg);
+    }
+}
+
+@mixin center {
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin border-absolute {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 218px;
+    height: 2px;
+    background-color: #222222;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @media screen and (max-width: 767px) {
+        width: 114px;
+    }
+}
+
+@mixin cont-block-abs {
+    content: '';
+    display: block;
+    position: absolute;
+}
