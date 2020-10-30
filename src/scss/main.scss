@@ -2,6 +2,7 @@
 @import 'var';
 @import 'particles';
 @import 'fonts';
+@import 'hamburger';
 @import 'responsive-txt';
 
 .header {
@@ -14,9 +15,6 @@
 
 .logo {
 	position: relative;
-	@media screen and (max-width: 991px) {
-		flex-basis: 15%;
-	}
 	&__link {
 		display: block;
 	}
@@ -41,11 +39,11 @@
 }
 
 .navigation {
-	@media screen and (max-width: 767px) {
-		flex-basis: 50%;;
-	}
 	&__list {
 		@include classic-flex;
+		@media screen and (max-width: 767px) {
+			display: block;
+		}
 	}
 	&__link {
 		text-decoration: none !important;
@@ -54,22 +52,44 @@
 		padding: 0 10px;
 		color: $color-secondary;
 		font-family: "Exo 2";
-		@include fluidFontSize(5px, 10px, 320px, 767px, 14px);
 		@include fluidFontSize(12px, 12px, 768px, 991px, 14px);
 		@include fluidFontSize(14px, 14px, 992px, 1920px, 14px);
 		line-height: 11.5px;
 		&:hover {
 			color: $color-success;
 		}
+		@media screen and (max-width: 767px) {
+			color: $color-main;
+			line-height: 34px;
+			padding: 0 20px;
+			&:hover {
+				color: $color-success;
+				background-color: $color-warning;
+			}
+		}
 	}
+	@media screen and (max-width: 767px) {
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 20;
+		background-color: $color-success;
+		border-left: 2px solid $color-warning;
+		padding-top: 80px;
+		height: 100%;
+		width: 50%;
+		text-align: center;
+		transition-duration: 0.4s;
+		transform: translateX(100%);
+	}
+}
+.navigation.active {
+	transform: translateX(0);
 }
 
 .phones {
 	position: relative;
 	padding-left: 25px;
-	@media screen and (max-width: 575px) {
-		padding: 15px;
-	}
 	&::before {
 		@include cont-block-abs;
 		background: url('../img/icons/phones.png') no-repeat center / contain;
@@ -79,19 +99,13 @@
 		top: 50%;
 		transform: translateY(-50%);
 		@media screen and (max-width: 767px) {
-			width: 14px;
-		}
-		@media screen and (max-width: 575px) {
-			width: 10px;
+			display: none;
 		}
 	}
 	&__link {
 		text-decoration: none !important;
 		display: block;
-		@include fluidFontSize(8px, 12px, 320px, 767px, 16px);
-		@include fluidFontSize(14px, 14px, 768px, 991px, 16px);
-		@include fluidFontSize(16px, 16px, 992px, 1920px, 16px);
-		
+		@include fluidFontSize(14px, 16px, 991px, 1920px, 16px);
 		color: $color-secondary;
 		font-family: "Exo 2";
 		&:hover {
@@ -106,18 +120,17 @@
 				color: $color-warning;
 			}
 		}
+		@media screen and (max-width: 767px) {
+			color: $color-main;
+			&:hover {
+				color: $color-success;
+				background-color: $color-warning;
+			}
+		}
 	}
 	&__icon-right {
 		position: relative;
 		padding-right: 25px;
-		@media screen and (max-width: 767px) {
-			padding-left: 25px;
-			padding-right: 0;
-		}
-		@media screen and (max-width: 468px) {
-			padding-left: 0;
-			padding-right: 25px;
-		}
 		&::after {
 			@include cont-block-abs;
 			background: url('../img/icons/phone-footer.png') no-repeat center / contain;
@@ -135,6 +148,22 @@
 				height: 24px;
 			}
 		}
+		@media screen and (max-width: 767px) {
+			padding-left: 25px;
+			padding-right: 0;
+		}
+		@media screen and (max-width: 468px) {
+			padding-left: 0;
+			padding-right: 25px;
+		}
+	}
+	@media screen and (max-width: 767px) {
+		color: $color-main;
+		padding: 5px 0;
+		margin-top: 10px;
+		line-height: 34px;
+		border-top: 1px solid $color-warning;
+		border-bottom: 1px solid $color-warning;
 	}
 }
 
@@ -160,7 +189,7 @@
 			color: $color-main;
 			font-family: "Russo One";
 			font-weight: 400;
-			@include fluidFontSize(18px, 36px, 320px, 767px, 72px);
+			@include fluidFontSize(28px, 36px, 320px, 767px, 72px);
 			@include fluidFontSize(50px, 50px, 768px, 991px, 72px);
 			@include fluidFontSize(72px, 72px, 992px, 1920px, 72px);
 		}
@@ -185,7 +214,7 @@
 			display: block;
 			color: $color-warning;
 			font-family: "Russo One";
-			@include fluidFontSize(28px, 72px, 320px, 767px, 72px);
+			@include fluidFontSize(42px, 72px, 320px, 767px, 72px);
 			@include fluidFontSize(100px, 100px, 768px, 991px, 72px);
 			@include fluidFontSize(146px, 146px, 992px, 1920px, 72px);
 			font-weight: 400;
@@ -216,7 +245,7 @@
 			padding: 3px 5px;
 			margin-bottom: 20px;
 			font-weight: 500;
-			@include fluidFontSize(8px, 12px, 320px, 767px, 16px);
+			@include fluidFontSize(12px, 12px, 320px, 767px, 16px);
 			@include fluidFontSize(16px, 16px, 768px, 1920px, 16px);
 		}
 		&__primary-button {

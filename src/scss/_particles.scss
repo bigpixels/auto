@@ -6,7 +6,7 @@
 	max-width: 145px;
 	border-radius: 4px;
   	background-color: $color-warning;
-	@include fluidFontSize(8px, 16px, 320px, 767px, 16px);  
+	@include fluidFontSize(12px, 16px, 320px, 767px, 16px);  
 	color: $color-secondary;
 	line-height: 29px;
 	border: none; 
@@ -107,4 +107,19 @@
 	font-weight: 300;
 	line-height: 14px;
 	text-align: center;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($color: #000000, $alpha: 0.5);
+	z-index: 10;
+}
+
+.no-scroll {
+	overflow: hidden !important;
 }

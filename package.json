@@ -15,5 +15,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigpixels/auto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bigpixels/auto/issues"
+  },
+  "homepage": "https://github.com/bigpixels/auto#readme",
   "description": ""
 }

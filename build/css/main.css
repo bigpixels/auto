@@ -51,7 +51,7 @@ table {
   max-width: 145px;
   border-radius: 4px;
   background-color: #ffee00;
-  font-size: 8px;
+  font-size: 12px;
   color: #222222;
   line-height: 29px;
   border: none;
@@ -62,7 +62,7 @@ table {
   @media (min-width: 320px) {
     .primary-button {
       font-size: 16px;
-      font-size: calc( 0.0179 * 100vw + 2.27293px); } }
+      font-size: calc( 0.00895 * 100vw + 9.13647px); } }
   @media (min-width: 767px) {
     .primary-button {
       font-size: 16px; } }
@@ -159,6 +159,19 @@ table {
   line-height: 14px;
   text-align: center; }
 
+.overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10; }
+
+.no-scroll {
+  overflow: hidden !important; }
+
 @font-face {
   font-family: 'Russo One';
   src: url("../fonts/RussoOne.eot");
@@ -180,6 +193,96 @@ table {
   font-weight: 300;
   font-style: italic; }
 
+.hamburger {
+  padding: 40px 17px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+
+.hamburger:hover {
+  opacity: 0.7; }
+
+.hamburger.is-active:hover {
+  opacity: 0.7; }
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #222222; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #222222;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; }
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; }
+
+.hamburger-inner::before {
+  top: -10px; }
+
+.hamburger-inner::after {
+  bottom: -10px; }
+
+.hamburger--slider .hamburger-inner {
+  top: 2px; }
+
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s; }
+
+.hamburger--slider .hamburger-inner::after {
+  top: 20px; }
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg); }
+
+.hamburger--slider.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0; }
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg); }
+
+.hamburger {
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 0;
+      z-index: 30; } }
+  .hamburger:focus {
+    outline: none; }
+
 .header {
   padding: 20px 0; }
   .header__inner {
@@ -191,9 +294,6 @@ table {
 
 .logo {
   position: relative; }
-  @media screen and (max-width: 991px) {
-    .logo {
-      flex-basis: 15%; } }
   .logo__link {
     display: block; }
   .logo__img {
@@ -221,15 +321,14 @@ table {
       .logo_line::after {
         width: 114px; } }
 
-@media screen and (max-width: 767px) {
-  .navigation {
-    flex-basis: 50%; } }
-
 .navigation__list {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap; }
+  @media screen and (max-width: 767px) {
+    .navigation__list {
+      display: block; } }
 
 .navigation__link {
   text-decoration: none !important;
@@ -238,17 +337,9 @@ table {
   padding: 0 10px;
   color: #222222;
   font-family: "Exo 2";
-  font-size: 5px;
   font-size: 12px;
   font-size: 14px;
   line-height: 11.5px; }
-  @media (min-width: 320px) {
-    .navigation__link {
-      font-size: 14px;
-      font-size: calc( 0.01119 * 100vw + 1.42058px); } }
-  @media (min-width: 767px) {
-    .navigation__link {
-      font-size: 10px; } }
   @media (min-width: 768px) {
     .navigation__link {
       font-size: 14px;
@@ -265,13 +356,36 @@ table {
       font-size: 14px; } }
   .navigation__link:hover {
     color: #06bc7e; }
+  @media screen and (max-width: 767px) {
+    .navigation__link {
+      color: #fff;
+      line-height: 34px;
+      padding: 0 20px; }
+      .navigation__link:hover {
+        color: #06bc7e;
+        background-color: #ffee00; } }
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    background-color: #06bc7e;
+    border-left: 2px solid #ffee00;
+    padding-top: 80px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transition-duration: 0.4s;
+    transform: translateX(100%); } }
+
+.navigation.active {
+  transform: translateX(0); }
 
 .phones {
   position: relative;
   padding-left: 25px; }
-  @media screen and (max-width: 575px) {
-    .phones {
-      padding: 15px; } }
   .phones::before {
     content: '';
     display: block;
@@ -284,36 +398,17 @@ table {
     transform: translateY(-50%); }
     @media screen and (max-width: 767px) {
       .phones::before {
-        width: 14px; } }
-    @media screen and (max-width: 575px) {
-      .phones::before {
-        width: 10px; } }
+        display: none; } }
   .phones__link {
     text-decoration: none !important;
     display: block;
-    font-size: 8px;
     font-size: 14px;
-    font-size: 16px;
     color: #222222;
     font-family: "Exo 2"; }
-    @media (min-width: 320px) {
-      .phones__link {
-        font-size: 16px;
-        font-size: calc( 0.00895 * 100vw + 5.13647px); } }
-    @media (min-width: 767px) {
-      .phones__link {
-        font-size: 12px; } }
-    @media (min-width: 768px) {
-      .phones__link {
-        font-size: 16px;
-        font-size: calc( 0 * 100vw + 14px); } }
     @media (min-width: 991px) {
       .phones__link {
-        font-size: 14px; } }
-    @media (min-width: 992px) {
-      .phones__link {
         font-size: 16px;
-        font-size: calc( 0 * 100vw + 16px); } }
+        font-size: calc( 0.00215 * 100vw + 11.86652px); } }
     @media (min-width: 1920px) {
       .phones__link {
         font-size: 16px; } }
@@ -347,17 +442,15 @@ table {
           font-size: 14px; } }
       .phones__link_footer:hover {
         color: #ffee00; }
+    @media screen and (max-width: 767px) {
+      .phones__link {
+        color: #fff; }
+        .phones__link:hover {
+          color: #06bc7e;
+          background-color: #ffee00; } }
   .phones__icon-right {
     position: relative;
     padding-right: 25px; }
-    @media screen and (max-width: 767px) {
-      .phones__icon-right {
-        padding-left: 25px;
-        padding-right: 0; } }
-    @media screen and (max-width: 468px) {
-      .phones__icon-right {
-        padding-left: 0;
-        padding-right: 25px; } }
     .phones__icon-right::after {
       content: '';
       display: block;
@@ -376,6 +469,22 @@ table {
         .phones__icon-right::after {
           right: 0;
           height: 24px; } }
+    @media screen and (max-width: 767px) {
+      .phones__icon-right {
+        padding-left: 25px;
+        padding-right: 0; } }
+    @media screen and (max-width: 468px) {
+      .phones__icon-right {
+        padding-left: 0;
+        padding-right: 25px; } }
+  @media screen and (max-width: 767px) {
+    .phones {
+      color: #fff;
+      padding: 5px 0;
+      margin-top: 10px;
+      line-height: 34px;
+      border-top: 1px solid #ffee00;
+      border-bottom: 1px solid #ffee00; } }
 
 .banner {
   padding: 147px 0 67px 0;
@@ -394,13 +503,13 @@ table {
     color: #fff;
     font-family: "Russo One";
     font-weight: 400;
-    font-size: 18px;
+    font-size: 28px;
     font-size: 50px;
     font-size: 72px; }
     @media (min-width: 320px) {
       .banner__title-name-top {
         font-size: 72px;
-        font-size: calc( 0.04027 * 100vw + 5.11409px); } }
+        font-size: calc( 0.0179 * 100vw + 22.27293px); } }
     @media (min-width: 767px) {
       .banner__title-name-top {
         font-size: 36px; } }
@@ -478,14 +587,14 @@ table {
     display: block;
     color: #ffee00;
     font-family: "Russo One";
-    font-size: 28px;
+    font-size: 42px;
     font-size: 100px;
     font-size: 146px;
     font-weight: 400; }
     @media (min-width: 320px) {
       .banner__title-primary {
         font-size: 72px;
-        font-size: calc( 0.09843 * 100vw + -3.49888px); } }
+        font-size: calc( 0.06711 * 100vw + 20.52349px); } }
     @media (min-width: 767px) {
       .banner__title-primary {
         font-size: 72px; } }
@@ -511,7 +620,7 @@ table {
     text-transform: uppercase;
     color: #fff;
     font-family: "Exo 2";
-    font-size: 8px;
+    font-size: 12px;
     font-size: 14px;
     font-size: 16px;
     font-weight: 500;
@@ -521,7 +630,7 @@ table {
     @media (min-width: 320px) {
       .form__title {
         font-size: 16px;
-        font-size: calc( 0.00895 * 100vw + 5.13647px); } }
+        font-size: calc( 0 * 100vw + 12px); } }
     @media (min-width: 767px) {
       .form__title {
         font-size: 12px; } }
@@ -548,12 +657,12 @@ table {
     padding: 3px 5px;
     margin-bottom: 20px;
     font-weight: 500;
-    font-size: 8px;
+    font-size: 12px;
     font-size: 16px; }
     @media (min-width: 320px) {
       .form__field {
         font-size: 16px;
-        font-size: calc( 0.00895 * 100vw + 5.13647px); } }
+        font-size: calc( 0 * 100vw + 12px); } }
     @media (min-width: 767px) {
       .form__field {
         font-size: 12px; } }
