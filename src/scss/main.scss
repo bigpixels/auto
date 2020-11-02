@@ -79,11 +79,11 @@
 		height: 100%;
 		width: 50%;
 		text-align: center;
-		transition-duration: 0.4s;
-		transform: translateX(100%);
+		transition-duration: 0.8s;
+		transform: translateX(250%);
 	}
 }
-.navigation.active {
+.navigation.active, .phones.active {
 	transform: translateX(0);
 }
 
@@ -163,7 +163,9 @@
 		margin-top: 10px;
 		line-height: 34px;
 		border-top: 1px solid $color-warning;
+		transition-duration: 0.8s;
 		border-bottom: 1px solid $color-warning;
+		transform: translateX(250%);
 	}
 }
 

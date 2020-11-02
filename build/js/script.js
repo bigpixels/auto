@@ -7,8 +7,10 @@ $(function () {
     let $phones = $('.phones');
 
     function  window_size() {
-        if ( body.innerWidth() < 767) {
-            $phones.appendTo('.navigation');
+        if ( body.innerWidth() > 767) {
+            $phones.appendTo('.header__inner');
+        } else {
+            $phones.appendTo('.navigation')
         }
     }
     $(window).on('load resize', window_size)
@@ -18,6 +20,7 @@ $(function () {
         .toggleClass('is-active')
         .next()
         .toggleClass('active');
+        $phones.toggleClass('active');
         $overlay.fadeToggle();
         $('body, html').toggleClass('no-scroll');
     }
